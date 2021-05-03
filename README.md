@@ -1,6 +1,6 @@
 # mobile-app - Project UAS PAM
-Aplikasi Julio Fish Betta Compannion. 
-*abaikan branch **master**
+Aplikasi Julio Fish Betta Compannion. \
+*abaikan branch **master***
 # Setting Up
 ## Clone Repository
 `git clone https://github.com/ahmadyulinu/mobile-app.git`
