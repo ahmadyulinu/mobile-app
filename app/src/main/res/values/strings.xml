@@ -5,4 +5,8 @@
     <string name="hint_password">Password</string>
     <string name="text_button_login">LOGIN</string>
     <string name="text_register_button">Create New Account</string>
+    <string name="hint_name">Nama</string>
+    <string name="text_button_register">Create Account</string>
+    <string name="text_button_registerconfirm" />
+    <string name="brand_register_text">Create Account</string>
 </resources>
