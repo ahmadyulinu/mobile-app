@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">pam-uas</string>
+    <string name="brand_text">Selamat Datang di Julio Betta Companion</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="text_button_login">LOGIN</string>
+    <string name="text_register_button">Create New Account</string>
 </resources>
