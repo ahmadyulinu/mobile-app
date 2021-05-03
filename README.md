@@ -5,7 +5,7 @@ Aplikasi Julio Fish Betta Compannion. \
 ## Clone Repository
 `git clone https://github.com/ahmadyulinu/mobile-app.git`
 ## Fetch dan pull biar up-to-date
-`git fetch` 
+`git fetch` \
 `git pull origin main`
 
 # Development
@@ -13,7 +13,7 @@ Aplikasi Julio Fish Betta Compannion. \
 `git checkout -b branch-name`
 ## Merging branch
 ### Commit seluruh perubahan yang anda lakukan
-`git add .
+`git add .` \
  git commit -m "commit message`
 ### Kembali ke branch 'main'
 `git checkout main`
