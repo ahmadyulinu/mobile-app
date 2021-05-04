@@ -22,6 +22,8 @@ Aplikasi Julio Fish Betta Compannion. \
 `git pull origin main`
 
 # Development
+## Download Gradle
+`gradle v6.6.1 https://gradle.org/releases/`
 ## Buat branch baru
 `git checkout -b branch-name`
 ## Merging branch
