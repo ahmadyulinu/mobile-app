@@ -9,4 +9,18 @@
     <string name="text_button_register">Create Account</string>
     <string name="text_button_registerconfirm" />
     <string name="brand_register_text">Create Account</string>
+    <string name="beranda">Beranda</string>
+    <string name="harga1">Rp 99.000</string>
+    <string name="harga3">Rp 99.000</string>
+    <string name="ikan_pilihan">Ikan Pilihan</string>
+    <string name="backgroundbiru">BackgroundBiru</string>
+    <string name="backgroundhijau">BackgroundHijau</string>
+    <string name="nama_ikan2">Cupang Surga</string>
+    <string name="harga2">Rp 99.000</string>
+    <string name="namaikan3">Dark Dragon</string>
+    <string name="namaikan1">Belgi Bangkok</string>
+    <string name="kategoriikan1">kategori1</string>
+    <string name="ikan1">ikan1</string>
+    <string name="ikan3">ikan3</string>
+    <string name="ikan2">ikan2</string>
 </resources>
