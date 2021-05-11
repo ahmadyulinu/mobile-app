@@ -36,7 +36,7 @@
             style="@style/AppTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80sp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/register_button_form"
             android:orientation="vertical">
 
