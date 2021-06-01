@@ -10,26 +10,40 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/backgroundbiru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgrounddasar"
-        android:contentDescription="@string/backgroundbiru" />
+        app:srcCompat="@drawable/backgrounddasar" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/backgroundhijau"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/backgroundatas"
-        android:contentDescription="@string/backgroundhijau" />
+        app:srcCompat="@drawable/backgroundatas" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ScrollView>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-79dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,8 +73,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/katikan1"
-                android:contentDescription="@string/kategoriikan1" />
+                android:contentDescription="@string/kategoriikan1"
+                app:srcCompat="@drawable/katikan1" />
 
         </LinearLayout>
 
@@ -86,8 +100,8 @@
             android:layout_height="100dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:background="@drawable/kolomkategori">
+            android:background="@drawable/kolomkategori"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="131dp"
@@ -98,8 +112,8 @@
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ikan1"
-                    android:contentDescription="@string/ikan1" />
+                    android:contentDescription="@string/ikan1"
+                    app:srcCompat="@drawable/ikan1" />
             </LinearLayout>
 
             <LinearLayout
@@ -130,7 +144,6 @@
                     android:text="@string/harga1"
                     android:textColor="#000000"
                     android:textSize="12sp"
-                    android:contentDescription="@string/harga1"
                     tools:ignore="LabelFor" />
             </LinearLayout>
 
@@ -153,8 +166,8 @@
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ikan2"
-                    android:contentDescription="@string/ikan2" />
+                    android:contentDescription="@string/ikan2"
+                    app:srcCompat="@drawable/ikan2" />
             </LinearLayout>
 
             <LinearLayout
@@ -167,23 +180,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="@string/nama_ikan2"
                     android:fontFamily="@font/cardo_bold"
+                    android:text="@string/nama_ikan2"
                     android:textColor="#000000"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:autofillHints=""
                     android:ems="10"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPersonName"
                     android:text="@string/harga2"
                     android:textColor="#000000"
                     android:textSize="12sp"
-                    android:autofillHints=""
                     tools:ignore="LabelFor" />
             </LinearLayout>
 
@@ -207,8 +220,8 @@
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ikan3"
-                    android:contentDescription="@string/ikan3" />
+                    android:contentDescription="@string/ikan3"
+                    app:srcCompat="@drawable/ikan3" />
             </LinearLayout>
 
             <LinearLayout
@@ -246,6 +259,40 @@
         </LinearLayout>
 
 
-
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="206dp"
+        android:layout_height="80dp"
+        android:contentDescription="navhome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/newnav__1_"
+        tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="205dp"
+        android:layout_height="79dp"
+        android:contentDescription="@string/navstatus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:srcCompat="@drawable/newnav__2_" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
