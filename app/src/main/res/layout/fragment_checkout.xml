@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/checkout_fish_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/register_confirm_button"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/content_desc_fish_image"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ikan1" />
+
+        <TextView
+            android:id="@+id/checkout_fish_description"
+            android:layout_width="350sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60sp"
+            android:background="@drawable/card_shape"
+            android:fontFamily="@font/montserrat"
+            android:paddingStart="20sp"
+            android:paddingTop="40sp"
+            android:paddingEnd="20sp"
+            android:paddingBottom="40sp"
+            android:text="@string/lorem_small"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:lineHeight="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30sp"
+        android:background="@drawable/register_button_form"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/checkout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:ems="10"
+            android:fontFamily="@font/cardo"
+            android:hint="@string/hint_name"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/form_padding"
+            android:paddingEnd="@dimen/form_padding" />
+
+        <EditText
+            android:id="@+id/checkout_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:ems="10"
+            android:fontFamily="@font/cardo"
+            android:hint="@string/hint_address"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/form_padding"
+            android:paddingEnd="@dimen/form_padding" />
+
+        <EditText
+            android:id="@+id/checkout_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:ems="10"
+            android:fontFamily="@font/cardo"
+            android:hint="Amount"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/form_padding"
+            android:paddingEnd="@dimen/form_padding" />
+
+        <Button
+            android:id="@+id/checkout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_confirm_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/checkout_button"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</FrameLayout>

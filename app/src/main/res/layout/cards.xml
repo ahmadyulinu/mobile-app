@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/phone_Cardview"
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/card_shape"
+    android:backgroundTint="#000000"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="6dp">
+
+    <ImageView
+        android:id="@+id/fish_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ikan1" />
+
+    <TextView
+        android:id="@+id/fish_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ikan 1" />
+</androidx.cardview.widget.CardView>
