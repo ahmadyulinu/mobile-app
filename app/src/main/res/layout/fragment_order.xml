@@ -74,7 +74,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerOrder"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="470dp"
             tools:listitem="@layout/list_status" />
 
     </LinearLayout>

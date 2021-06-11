@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pam_uas.R
 import com.example.pam_uas.models.dataclass.items
+import com.squareup.picasso.Picasso
 
 class RecyclerHolder(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_status, parent, false))  {
@@ -22,9 +23,11 @@ class RecyclerHolder(inflater: LayoutInflater, parent: ViewGroup):
     }
 
     fun bind(data: items) {
-        imageView?.setImageResource(data.imgView)
-        text1?.text = data.text1
-        text2?.text = data.text2
+
+//        imageView?.setImageResource(data.imgView)
+        Picasso.get().load(data.foto).into(imageView)
+        text1?.text = data.nama_ikan
+        text2?.text = data.status_transaksi
     }
 
 }

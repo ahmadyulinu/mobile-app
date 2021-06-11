@@ -26,24 +26,38 @@
             android:scaleType="fitXY"
             app:srcCompat="@drawable/ikan1" />
 
-        <TextView
-            android:id="@+id/checkout_fish_description"
-            android:layout_width="350sp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="60sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
             android:background="@drawable/card_shape"
-            android:fontFamily="@font/montserrat"
-            android:paddingStart="20sp"
-            android:paddingTop="40sp"
-            android:paddingEnd="20sp"
-            android:paddingBottom="40sp"
-            android:text="@string/lorem_small"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            app:lineHeight="30sp" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    <LinearLayout
+            <TextView
+                android:id="@+id/checkout_fish_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/cardo_bold"
+                android:text="Fish Name"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/checkout_fish_description"
+                android:layout_width="350sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/lorem_small"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30sp"
@@ -92,6 +106,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/register_confirm_button"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:fontFamily="@font/cardo"
             android:text="@string/checkout_button"
             android:textColor="@android:color/white" />
     </LinearLayout>

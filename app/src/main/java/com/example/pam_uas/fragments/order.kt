@@ -1,6 +1,7 @@
 package com.example.pam_uas.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pam_uas.R
+import com.example.pam_uas.models.dataclass.FishItems
 import com.example.pam_uas.models.recycler.RecyclerAdapter
 import com.example.pam_uas.models.dataclass.items
+import com.example.pam_uas.models.recycler.FishAdapter
+import com.example.pam_uas.models.recycler.HorizontalAdapter
+import com.example.pam_uas.models.retrofit.builder
+import kotlinx.android.synthetic.main.fragment_beranda.*
 import kotlinx.android.synthetic.main.fragment_order.RecyclerOrder
+import retrofit2.Call
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,22 +64,40 @@ class order : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var id = requireArguments().getInt("id_user");
+        Log.d("F/D", "ID_USER(FRAGMENT): $id")
 
         val data = ArrayList<items>()
 
         // Populate Array
 
-        data.add(items(1,R.drawable.ikan1, "Ikan 1", "Ikan 3"))
+//        data.add(items(1,R.drawable.ikan1, "Ikan 1", "Ikan 3"))
+//
+//        data.add(items(2,R.drawable.ikan1, "Ikan 2", "Ikan 2"))
+//
+//        data.add(items(3, R.drawable.ikan1, "Ikan 3", "Ikan 3"))
+//
+//        data.add(items(4, R.drawable.ikan1, "Ikan 4", "Ikan 4"))
+//
+//        data.add(items(5, R.drawable.ikan1, "Ikan 5", "Ikan 5"))
+//
+//        data.add(items(6, R.drawable.ikan1, "Ikan 6", "Ikan 6"))
 
-        data.add(items(2,R.drawable.ikan1, "Ikan 2", "Ikan 2"))
+        builder.instance.getOrder(id).enqueue(object: retrofit2.Callback<ArrayList<items>> {
+            override fun onResponse(
+                call: Call<ArrayList<items>>?,
+                response: Response<ArrayList<items>>?
+            ) {
+                response?.body()?.let { data.addAll(it) }
+                var adapter = RecyclerAdapter(data)
 
-        data.add(items(3, R.drawable.ikan1, "Ikan 3", "Ikan 3"))
+                RecyclerOrder.adapter = adapter
 
-        data.add(items(4, R.drawable.ikan1, "Ikan 4", "Ikan 4"))
-
-        data.add(items(5, R.drawable.ikan1, "Ikan 5", "Ikan 5"))
-
-        data.add(items(6, R.drawable.ikan1, "Ikan 6", "Ikan 6"))
+            }
+            override fun onFailure(call: Call<ArrayList<items>>?, t: Throwable?) {
+                Log.e("R", "Error adalah :" + t.toString())
+            }
+        })
         RecyclerOrder.layoutManager = LinearLayoutManager(activity)
         RecyclerOrder.adapter = RecyclerAdapter(data)
     }

@@ -78,9 +78,10 @@ class beranda : Fragment() {
                         var args = Bundle().apply {
                             putString("deskripsi", data.deskripsi)
                             putInt("id", data.id)
-                            putString("harga", data.harga)
+                            putString("harga", data.harga) // iki ngirim harga ikan nang fragment
                             putString("foto", data.foto)
                             putInt("id_transaksi", 7)
+                            putString("nama_ikan", data.nama_ikan)
                         }
                         checkout.arguments = args
                         makeCurrentFragment(checkout)
@@ -96,6 +97,7 @@ class beranda : Fragment() {
                             putString("harga", data.harga)
                             putString("foto", data.foto)
                             putInt("id_transaksi", 7)
+                            putString("nama_ikan", data.nama_ikan)
                         }
                         checkout.arguments = args
                         makeCurrentFragment(checkout)

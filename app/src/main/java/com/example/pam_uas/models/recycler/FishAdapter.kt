@@ -44,9 +44,6 @@ class FishAdapter(private val data: ArrayList<FishItems>): RecyclerView.Adapter<
             text1 = itemView.findViewById(R.id.tvFishName)
             text2 = itemView.findViewById(R.id.tvStatus)
 
-
-
-
             Picasso.get().load(data.foto).into(imageView)
             // imageView?.setImageResource(data.imgView)
             text1?.text = data.nama_ikan

@@ -1,9 +1,6 @@
 package com.example.pam_uas.models.retrofit
 
-import com.example.pam_uas.models.dataclass.FishItems
-import com.example.pam_uas.models.dataclass.UserRequest
-import com.example.pam_uas.models.dataclass.UserResponse
-import com.example.pam_uas.models.dataclass.post
+import com.example.pam_uas.models.dataclass.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -20,5 +17,11 @@ interface API {
     fun register(
         @Body userRequest: UserRequest
     ): Call<(UserResponse)>
+
+    @GET("transactions/{id}")
+    fun getOrder(
+        @Path("id")
+        id_user: Int
+    ): Call<ArrayList<items>>
 
 }

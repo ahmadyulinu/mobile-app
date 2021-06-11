@@ -41,7 +41,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/register_name"
+                android:id="@+id/form_register_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -54,7 +54,7 @@
                 android:paddingRight="@dimen/form_padding" />
 
             <EditText
-                android:id="@+id/register_username"
+                android:id="@+id/form_register_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -67,7 +67,7 @@
                 android:paddingRight="@dimen/form_padding" />
 
             <EditText
-                android:id="@+id/register_password"
+                android:id="@+id/form_register_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
@@ -80,7 +80,7 @@
                 android:paddingRight="@dimen/form_padding" />
 
             <Button
-                android:id="@+id/button_login"
+                android:id="@+id/button_form_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/register_confirm_button"

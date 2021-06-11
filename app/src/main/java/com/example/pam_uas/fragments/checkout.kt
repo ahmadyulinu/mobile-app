@@ -33,6 +33,7 @@ class checkout : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var text: TextView? = null
+    private var fish_name: TextView? = null
     private var imageView: ImageView? = null
     private var button: Button? = null
     private var amount: Int = 0
@@ -63,16 +64,20 @@ class checkout : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         text = getView()?.findViewById(R.id.checkout_fish_description)
         imageView = getView()?.findViewById(R.id.checkout_fish_image)
+        fish_name = getView()?.findViewById(R.id.checkout_fish_name)
         var bundle = this.arguments
         var deskripsi = bundle?.getString("deskripsi")
         var id = bundle?.getInt("id")
         var id_string = id.toString()
         var id_transaksi = bundle?.getInt("id_transaksi")
+        var nama_ikan = bundle?.getString("nama_ikan")
 
         var foto = bundle?.getString("foto")
-        var harga = bundle?.getString("harga")?.toInt()
-        var string = "Deskripsi Ikan Ikan adalah :\n" + deskripsi + "\n ID adalah: " + id
-        text?.text = string
+        var harga = bundle?.getString("harga")?.toInt() // iki njupuk harga mau terus diconvert nang Integer
+        // ben harga_total e isok dikalkulasi. harga_total kan jumlah * harga
+
+        text?.text = deskripsi
+        fish_name?.text = nama_ikan
 
         Picasso.get().load(foto).into(imageView)
 
