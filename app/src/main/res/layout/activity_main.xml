@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_style"
                 android:backgroundTint="@color/colorPrimaryDark"
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/cardo"
                 android:text="@string/text_button_login"
                 android:textColor="@android:color/white" />
 

@@ -16,4 +16,10 @@
     <string name="hint_address">Address</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_brand_text">Pesanan Saya</string>
+    <string name="order_header_text">Status Pengiriman</string>
+    <string name="error_message">Seems like you have no internet connection right now. Try again later.</string>
+    <string name="nav_text_home">Beranda</string>
+    <string name="narv_text_logout">Log Out</string>
+    <string name="nav_text_order">My Orders</string>
 </resources>

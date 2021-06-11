@@ -16,6 +16,7 @@ import com.example.pam_uas.models.recycler.FishAdapter
 import com.example.pam_uas.models.recycler.HorizontalAdapter
 import com.example.pam_uas.models.retrofit.builder
 import kotlinx.android.synthetic.main.fragment_beranda.*
+import kotlinx.android.synthetic.main.fragment_order.*
 import kotlinx.android.synthetic.main.fragment_order.RecyclerOrder
 import retrofit2.Call
 import retrofit2.Response
@@ -64,7 +65,7 @@ class order : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var id = requireArguments().getInt("id_user");
+        var id = arguments?.getInt("id_user");
         Log.d("F/D", "ID_USER(FRAGMENT): $id")
 
         val data = ArrayList<items>()
@@ -96,10 +97,13 @@ class order : Fragment() {
             }
             override fun onFailure(call: Call<ArrayList<items>>?, t: Throwable?) {
                 Log.e("R", "Error adalah :" + t.toString())
+
+                order_error.visibility = View.VISIBLE
             }
         })
         RecyclerOrder.layoutManager = LinearLayoutManager(activity)
         RecyclerOrder.adapter = RecyclerAdapter(data)
+
     }
 
     private fun init() {

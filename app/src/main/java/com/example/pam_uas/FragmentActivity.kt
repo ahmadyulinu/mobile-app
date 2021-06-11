@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_check_out.*
 class FragmentActivity : AppCompatActivity()  {
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_out)
@@ -31,6 +32,7 @@ class FragmentActivity : AppCompatActivity()  {
         val checkout = checkout()
         val order = order()
 
+        homeFragment.setArguments(bundle)
         order.setArguments(bundle)
 
         makeCurrentFragment(homeFragment)
@@ -41,17 +43,16 @@ class FragmentActivity : AppCompatActivity()  {
                 R.id.ic_cart -> makeCurrentFragment(order)
                 R.id.ic_logout -> logOut()
             }
-
             true
         }
-
-
     }
 
 
 
     private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
+
+            addToBackStack(null)
             replace(R.id.fl_layout, fragment)
             commit()
         }

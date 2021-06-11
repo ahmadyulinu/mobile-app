@@ -18,10 +18,13 @@ interface API {
         @Body userRequest: UserRequest
     ): Call<(UserResponse)>
 
+    @POST("checkout")
+    fun checkout(@Body checkoutRequest: CheckoutRequest): Call<(CheckoutResponse)>
+
     @GET("transactions/{id}")
     fun getOrder(
         @Path("id")
-        id_user: Int
+        id_user: Int?
     ): Call<ArrayList<items>>
 
 }

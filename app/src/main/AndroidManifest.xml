@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_conf">
         <activity android:name=".FragmentActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

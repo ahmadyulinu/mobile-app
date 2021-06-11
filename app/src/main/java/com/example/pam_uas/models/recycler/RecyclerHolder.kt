@@ -1,5 +1,6 @@
 package com.example.pam_uas.models.recycler
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -22,9 +23,9 @@ class RecyclerHolder(inflater: LayoutInflater, parent: ViewGroup):
         text2 = itemView.findViewById(R.id.tvStatus)
     }
 
+
     fun bind(data: items) {
 
-//        imageView?.setImageResource(data.imgView)
         Picasso.get().load(data.foto).into(imageView)
         text1?.text = data.nama_ikan
         text2?.text = data.status_transaksi

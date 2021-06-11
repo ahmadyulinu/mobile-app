@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pam_uas.R
@@ -20,6 +21,7 @@ import kotlinx.android.synthetic.main.fragment_order.RecyclerOrder
 import retrofit2.Call
 import retrofit2.Response
 import androidx.fragment.app.FragmentManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,13 +57,12 @@ class beranda : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // deklarasi
+        var id_user = this.arguments?.getInt("id_user")
         val checkout = checkout()
         val data = ArrayList<FishItems>()
 
-        // Populate Data Class
-//        for (i in 0..5) {
-//            data.add(FishItems(i, "https://i.ibb.co/ZB47QwH/2122931718.jpg", "Ikan Goreng $i", "Rp. $i" ))
-//        }
+        // retrofit
         builder.instance.getPosts().enqueue(object: retrofit2.Callback<ArrayList<FishItems>> {
             override fun onResponse(
                 call: Call<ArrayList<FishItems>>?,
@@ -82,6 +83,7 @@ class beranda : Fragment() {
                             putString("foto", data.foto)
                             putInt("id_transaksi", 7)
                             putString("nama_ikan", data.nama_ikan)
+                            putString("id_user", id_user.toString())
                         }
                         checkout.arguments = args
                         makeCurrentFragment(checkout)
@@ -109,24 +111,20 @@ class beranda : Fragment() {
             }
             override fun onFailure(call: Call<ArrayList<FishItems>>?, t: Throwable?) {
                 Log.e("R", "Error adalah :" + t.toString())
+                beranda_error.visibility = View.VISIBLE
             }
         })
+
+        // set layout manager recyclerView
         RecyclerOrder.layoutManager = LinearLayoutManager(activity)
 
         RecyclerHorizon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-
-
-
-
-        // horizontal recycler view
-
-
-
     }
 
     private fun makeCurrentFragment(fragment: Fragment) =
 
         activity?.supportFragmentManager?.beginTransaction()?.apply {
+            addToBackStack(null)
             replace(R.id.fl_layout, fragment)
             commit()
         }

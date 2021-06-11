@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_beranda_to_checkout"
             app:destination="@id/checkout"
-            app:enterAnim="@anim/from_below" />
+            app:enterAnim="@anim/from_below"
+            app:exitAnim="@anim/from_above"
+            app:popEnterAnim="@anim/from_below"
+            app:popExitAnim="@anim/from_above" />
     </fragment>
 </navigation>
