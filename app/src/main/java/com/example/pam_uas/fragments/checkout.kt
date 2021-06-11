@@ -77,54 +77,12 @@ class checkout : Fragment() {
         Picasso.get().load(foto).into(imageView)
 
         // posting
-        var nama = checkout_name.text.toString()
-        var address = checkout_address.text.toString()
-        var checkString = checkout_amount.text?.toString()
 
-        if (
-            checkString != ""
-        ) {
-            amount = checkString!!.toInt()
-        }
-        var harga_total: Int = harga!!.times(amount)
-        var status = "DIPROSES"
-        var details = arrayOf(id_transaksi!!+1)
 
         button = getView()?.findViewById(R.id.checkout_button);
-        button?.setOnClickListener {
-            create(
-                id_string,
-                nama,
-                address,
-                amount,
-                harga_total,
-                status,
-                details
-            )
-        }
-
     }
 
-    private fun create(id_user: String, nama: String, alamat:String, jumlah:Int, total:Int,
-    status: String, details: Array<Int>) {
-        builder.instance.createPost(
-            id_user,
-            nama,
-            alamat,
-            jumlah,
-            total,
-            status,
-            details
-        ).enqueue(object: Callback<post>{
-            override fun onFailure(call: Call<post>?, t: Throwable?) {
-                Log.e("ERROR", "Errornya adalah: $t")
-            }
 
-            override fun onResponse(call: Call<post>?, response: Response<post>?) {
-                Log.d("SUCCESs", "Post Success")
-            }
-        })
-    }
 
     companion object {
         /**

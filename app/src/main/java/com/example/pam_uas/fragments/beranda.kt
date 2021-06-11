@@ -69,9 +69,26 @@ class beranda : Fragment() {
             ) {
                 response?.body()?.let { data.addAll(it) }
                 var adapter = FishAdapter(data)
+                var h_adapter = HorizontalAdapter(data)
 
                 RecyclerOrder.adapter = adapter
+                RecyclerHorizon.adapter = h_adapter
                 adapter.setOnItemClickCallback(object: FishAdapter.OnItemClickCallback{
+                    override fun onItemClicked(data: FishItems) {
+                        var args = Bundle().apply {
+                            putString("deskripsi", data.deskripsi)
+                            putInt("id", data.id)
+                            putString("harga", data.harga)
+                            putString("foto", data.foto)
+                            putInt("id_transaksi", 7)
+                        }
+                        checkout.arguments = args
+                        makeCurrentFragment(checkout)
+//                        Toast.makeText(activity, data.nama_ikan, Toast.LENGTH_SHORT).show()
+                    }
+                })
+
+                h_adapter.setOnItemClickCallback(object: HorizontalAdapter.OnItemClickCallback{
                     override fun onItemClicked(data: FishItems) {
                         var args = Bundle().apply {
                             putString("deskripsi", data.deskripsi)
@@ -94,19 +111,15 @@ class beranda : Fragment() {
         })
         RecyclerOrder.layoutManager = LinearLayoutManager(activity)
 
+        RecyclerHorizon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
 
 
 
         // horizontal recycler view
 
-        val horidata = ArrayList<HorizontalItems>()
 
-        horidata.add(HorizontalItems(1, R.drawable.ikan1))
-        horidata.add(HorizontalItems(2, R.drawable.ikan2))
-        horidata.add(HorizontalItems(3, R.drawable.ikan3))
 
-        RecyclerHorizon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        RecyclerHorizon.adapter = HorizontalAdapter(horidata)
     }
 
     private fun makeCurrentFragment(fragment: Fragment) =

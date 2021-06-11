@@ -50,7 +50,7 @@ class FishAdapter(private val data: ArrayList<FishItems>): RecyclerView.Adapter<
             Picasso.get().load(data.foto).into(imageView)
             // imageView?.setImageResource(data.imgView)
             text1?.text = data.nama_ikan
-            text2?.text = data.harga
+            text2?.text = "Rp., ${data.harga}"
 
 
 
